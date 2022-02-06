@@ -12,11 +12,7 @@ agent any
             	steps {
                     script{
                         withSonarQubeEnv('SonarQube'){
-                            def mavenImage = docker.image('maven')
-                            mavenImage.inside() 
-                            {
                                 sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Springboot-hello"
-                            }
                         }
                     }
                 }
