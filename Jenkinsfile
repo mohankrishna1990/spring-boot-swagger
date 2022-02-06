@@ -16,7 +16,7 @@ pipeline {
             	steps {
                     script{
                         withSonarQubeEnv('SonarQube'){
-                                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Springboot-hello"
+                                sh "mvn clean verify sonar:sonar"
                         }
                     }
                 }
