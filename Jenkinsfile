@@ -2,7 +2,7 @@ pipeline {
 agent any
   		stages {
         	stage('Clone sources') {
- 			    	steps {
+              steps {
                      git branch: 'main',
                      credentialsId: 'Github-username-password',
                      url: 'https://github.com/mohankrishna1990/spring-boot-swagger.git'
