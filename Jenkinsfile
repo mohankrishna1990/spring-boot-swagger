@@ -3,7 +3,9 @@ agent any
   		stages {
         	stage('Clone sources') {
  			    	steps {
-               git url: 'https://github.com/mohankrishna1990/spring-boot-swagger.git'
+               git branch: 'main',
+               credentialsId: 'Github-username-password',
+               url: 'https://github.com/mohankrishna1990/spring-boot-swagger.git'
                   }
                 }
         	stage('SonarQube analysis'){
