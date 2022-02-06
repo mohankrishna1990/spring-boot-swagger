@@ -1,8 +1,8 @@
 pipeline {
 agent any
   		stages {
-        			def mavenImage = docker.image('openjdk:11')
-        			stage('Clone sources') 
+        			
+        	stage('Clone sources') 
 {
  			steps 
 {
