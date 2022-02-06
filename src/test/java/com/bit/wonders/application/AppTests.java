@@ -29,37 +29,38 @@ public class AppTests {
 
 
 
-@LocalServerPort
-private int port;
+    @LocalServerPort
+    private int port;
 
-@Autowired
-private HelloController homeController;
-
-
-
-@Autowired
-private TestRestTemplate testRestTemplate;
-
-@Test
-@DisplayName(value = "Loads application context and verifies if OK.")
-void contextLoads() {
-assertNotNull(homeController);
-}
+    @Autowired
+    private HelloController homeController;
 
 
 
-@Test
-@DisplayName(value = "Test controller")
-void testController() {
-assertEquals(homeController.projectVersion(), "Version - 1.0", "Seems fine");
-assertEquals(homeController.helloWorld(), "Hello World @ Azure.");
-}
+    @Autowired
+    private TestRestTemplate testRestTemplate;
 
-@Test
-@DisplayName(value = "Test controller using TestRestTemplate")
-void testTemplate() {
-assertNotNull(testRestTemplate);
-ResponseEntity<String> response = testRestTemplate.getForEntity("/hello", String.class);
-String repsonseText = response.getBody();
-assertEquals(repsonseText,"Hello World @ Azure.");
+    @Test
+    @DisplayName(value = "Loads application context and verifies if OK.")
+    void contextLoads() {
+    assertNotNull(homeController);
+    }
+
+
+
+    @Test
+    @DisplayName(value = "Test controller")
+    void testController() {
+    assertEquals(homeController.projectVersion(), "Version - 1.0", "Seems fine");
+    assertEquals(homeController.helloWorld(), "Hello World @ Azure.");
+    }
+
+    @Test
+    @DisplayName(value = "Test controller using TestRestTemplate")
+    void testTemplate() {
+    assertNotNull(testRestTemplate);
+    ResponseEntity<String> response = testRestTemplate.getForEntity("/hello", String.class);
+    String repsonseText = response.getBody();
+    assertEquals(repsonseText,"Hello World @ Azure.");
+    }
 }
