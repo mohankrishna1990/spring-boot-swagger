@@ -13,6 +13,8 @@ git url: 'https://github.com/mohankrishna1990/spring-boot-swagger.git'
  {
             			steps 
 {
+   script
+    {
 withSonarQubeEnv('SonarQube')
  {
 def mavenImage = docker.image('openjdk:11')
@@ -23,6 +25,7 @@ sh "mvn clean verify sonar:sonar -Dsonar.projectKey=Springboot-hello"
 }
 }
 }
+ }
 stage("Quality gate") 
 {
 steps 
