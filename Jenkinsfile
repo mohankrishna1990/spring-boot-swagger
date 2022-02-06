@@ -1,5 +1,9 @@
 pipeline {
-agent any
+  agent any
+  tools { 
+        maven 'Maven 3.8.4' 
+        jdk 'jdk8' 
+    }
   		stages {
         	stage('Clone sources') {
               steps {
