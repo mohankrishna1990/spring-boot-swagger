@@ -15,9 +15,9 @@ pipeline {
         	stage('SonarQube'){
             	steps {
                 withSonarQubeEnv('SonarQube analysis'){
-                      script{
+                      
                        bat "mvn clean verify sonar:sonar -Dsonar.projectKey=spring-boot-swagger -Dsonar.host.url=http://localhost:9000 -Dsonar.login=8636a742d3ecbc9747361cf3c3efa40f1d7df961"
-                    }
+                    
                 }
             }
           }
