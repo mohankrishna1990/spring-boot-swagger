@@ -5,7 +5,7 @@
 	<groupId>com.bit.wonders</groupId>
 	<artifactId>spring.hello.world</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Hello Spring Boot</name>
+	<name>spring-boot-swagger</name>
 	<description>Test spring boot</description>
 
 	<parent>
