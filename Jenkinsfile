@@ -18,12 +18,7 @@ pipeline {
                       
                       bat "mvn clean verify sonar:sonar -Dsonar.projectKey=spring-boot-swagger -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ff3028be64aabde773654012f17e33ed0eb620c0"
                 }
+              }
+             }
             }
-          }
-            stage("Quality gate") {
-                steps {
-                    waitForQualityGate abortPipeline: true
-                      }
-                    }
-                }
-            }
+           }
