@@ -16,8 +16,7 @@ pipeline {
             	steps {
                 withSonarQubeEnv('SonarQube analysis'){
                       
-                       bat "mvn clean verify"
-                    
+                      bat "mvn clean verify sonar:sonar -Dsonar.projectKeyspring-boot-s=wagger -Dsonar.host.url=http://localhost:9000 -Dsonar.login=bc2cf0be1a013650fea424af7580f66801138e34"
                 }
             }
           }
